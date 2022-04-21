@@ -2,31 +2,29 @@ package com.example.mapapplication
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
-import androidx.navigation.NavDestination
-import androidx.navigation.NavHost
 import androidx.navigation.fragment.NavHostFragment
 import com.example.mapapplication.databinding.ActivityMainBinding
+import com.example.mapapplication.model.account.Account
 
 class MainActivity : AppCompatActivity() {
     private lateinit var navController:NavController
-
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
+        Repositories.initAppContext(applicationContext)
+        Repositories.initCurrentAccount()
+        val id = Repositories.currentAccount.getCurrentAccountId()
+        binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
         navController = getNavController()
-        prepareNavController(isSignedIn(), navController)
+        val isSignedIn = userIsSignedIn(id)
+        prepareNavController(isSignedIn, navController)
         navController.navigate(navController.graph.startDestinationId)
     }
 
-    private fun isSignedIn(): Boolean {
-        val bundle = intent.extras ?: throw IllegalStateException("No required arguments")
-        val args = MainActivityArgs.fromBundle(bundle)
-        return args.isSignedIn
+    private fun userIsSignedIn(id: Long): Boolean {
+        return id != Account.NO_ACCOUNT
     }
 
     private fun getNavController(): NavController{

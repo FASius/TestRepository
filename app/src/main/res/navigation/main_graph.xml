@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/signInFragment"
-        android:name="com.example.mapapplication.fragments.SignInFragment"
+        android:name="com.example.mapapplication.auth.SignInFragment"
         android:label="fragment_sign_in"
         tools:layout="@layout/fragment_sign_in" >
         <action
@@ -19,11 +19,11 @@
     </fragment>
     <fragment
         android:id="@+id/createAccountFragment"
-        android:name="com.example.mapapplication.fragments.CreateAccountFragment"
+        android:name="com.example.mapapplication.auth.CreateAccountFragment"
         android:label="CreateAccountFragment" />
     <fragment
         android:id="@+id/tabsFragment"
-        android:name="com.example.mapapplication.fragments.TabsFragment"
+        android:name="com.example.mapapplication.TabsFragment"
         android:label="fragment_tabs"
         tools:layout="@layout/fragment_tabs" />
 </navigation>

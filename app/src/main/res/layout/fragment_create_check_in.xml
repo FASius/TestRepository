@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".checkins.CreateCheckInFragment">
+
+    <!--
+        TODO map settings
+    -->
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/map_view"
+        android:layout_width="300dp"
+        android:layout_height="200dp" />
+
+    <TextView
+        android:id="@+id/location_text_view"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/default_place" />
+
+    <TextView
+        android:id="@+id/date_text_view"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="@string/date_default" />
+
+    <EditText
+        android:id="@+id/description_edit_text"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/no_description"
+        android:inputType="textMultiLine"
+        android:maxLines="8"/>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="fill"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancel_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@android:string/cancel" />
+
+        <Button
+            android:id="@+id/post_button"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="@string/post_check_in"
+            android:layout_marginStart="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

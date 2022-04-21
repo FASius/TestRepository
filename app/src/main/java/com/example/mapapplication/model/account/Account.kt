@@ -4,37 +4,26 @@ import com.example.mapapplication.model.EmptyFieldException
 import com.example.mapapplication.model.Field
 
 data class Account(
-    val username:String,
-    val firstName:String,
-    val secondName:String,
+    val id: Long,
+    var username:String,
     val email:String,
-    val password:String
+    var password:String
 ) {
-    fun validate(){
-        when{
-            username.isBlank() -> throw EmptyFieldException(Field.Username)
-            firstName.isBlank() -> throw EmptyFieldException(Field.FirstName)
-            secondName.isBlank() -> throw EmptyFieldException(Field.SecondName)
-            email.isBlank() -> throw EmptyFieldException(Field.Email)
-            password.isBlank() || password.length < 8 -> throw EmptyFieldException(Field.Password)
-        }
+    companion object{
+        const val NO_ACCOUNT = -1L
     }
 }
 
 class SignUpData(
     val username:String,
-    val firstName:String,
-    val secondName:String,
     val email:String,
     val password:String
 ){
     fun validate() {
         when {
             username.isBlank() -> throw EmptyFieldException(Field.Username)
-            firstName.isBlank() -> throw EmptyFieldException(Field.FirstName)
-            secondName.isBlank() -> throw EmptyFieldException(Field.SecondName)
             email.isBlank() -> throw EmptyFieldException(Field.Email)
-            password.isBlank() || password.length < 8 -> throw EmptyFieldException(Field.Password)
+            password.isBlank() -> throw EmptyFieldException(Field.Password)
         }
     }
 }

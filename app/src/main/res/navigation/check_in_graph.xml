@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/check_in_graph"
+    app:startDestination="@id/profileFragment">
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.mapapplication.checkins.CheckInListFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_check_in_list" >
+        <action
+            android:id="@+id/action_profileFragment_to_createCheckInFragment"
+            app:destination="@id/createCheckInFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_checkInDetailsFragment"
+            app:destination="@id/checkInDetailsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_checkInEditFragment"
+            app:destination="@id/checkInEditFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createCheckInFragment"
+        android:name="com.example.mapapplication.checkins.CreateCheckInFragment"
+        android:label="fragment_create_check_in"
+        tools:layout="@layout/fragment_create_check_in" />
+    <fragment
+        android:id="@+id/checkInDetailsFragment"
+        android:name="com.example.mapapplication.checkins.CheckInDetailsFragment"
+        android:label="fragment_check_in_details"
+        tools:layout="@layout/fragment_check_in_details" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkInEditFragment"
+        android:name="com.example.mapapplication.checkins.CheckInEditFragment"
+        android:label="fragment_check_in_edit"
+        tools:layout="@layout/fragment_check_in_edit" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+    </fragment>
+</navigation>

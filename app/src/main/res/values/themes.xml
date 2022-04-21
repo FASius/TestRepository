@@ -22,4 +22,5 @@
     <style name="Theme.MapApplication.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.MapApplication.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

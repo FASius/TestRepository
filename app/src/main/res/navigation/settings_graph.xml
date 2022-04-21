@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.mapapplication.fragments.SettingsFragment"
+        android:name="com.example.mapapplication.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" >
         <action
@@ -22,15 +22,15 @@
     </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
-        android:name="com.example.mapapplication.fragments.settings.ChangePasswordFragment"
+        android:name="com.example.mapapplication.auth.ChangePasswordFragment"
         android:label="ChangePasswordFragment" />
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.example.mapapplication.fragments.settings.EditProfileFragment"
+        android:name="com.example.mapapplication.auth.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.example.mapapplication.fragments.settings.AboutFragment"
+        android:name="com.example.mapapplication.settings.AboutFragment"
         android:label="AboutFragment" />
 </navigation>
